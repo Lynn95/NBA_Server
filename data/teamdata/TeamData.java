@@ -20,19 +20,20 @@ public class TeamData implements TeamDataService{
     	  readObject("NBAdata/teams/teams");
       }
       
-      public static void main(String args[]){
+   /*   public static void main(String args[]){
     	  TeamData t=new TeamData();
     	  
     	  ArrayList<TeamInfoPO> list=t.getTeamInfoList(); 
     	  TeamInfoPO po;
     	  for(int i=0;i<list.size();i++){
     		  po=list.get(i);
-    		  System.out.println("打印信息："+po.getDivision()+";"+po.getFormedTime()+";"+
-    		  po.getFullName()+";"+po.getHomeGround()+";"+po.getLocation()+";"+po.getPartition()+";"+
-    		  po.getTeamAbb());
+    		 // System.out.println("打印信息："+po.getDivision()+";"+po.getFormedTime()+";"+
+    		 // po.getFullName()+";"+po.getHomeGround()+";"+po.getLocation()+";"+po.getPartition()+";"+
+    		 // po.getTeamAbb());
     	  }
     	 
       }
+      */
 	@Override
 	public ArrayList<TeamInfoPO> getTeamInfoList() {
 		// TODO Auto-generated method stub

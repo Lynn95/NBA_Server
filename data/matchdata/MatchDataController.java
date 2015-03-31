@@ -28,7 +28,7 @@ public class MatchDataController implements MatchDataService{
 		matchList=new ArrayList<>();
 	}
 	
-	public static void main(String args[]){
+	/*public static void main(String args[]){
 		MatchDataController c=new MatchDataController();
 		//ArrayList<MatchPO> m=c.getAllMatch();
 		 int i=0;
@@ -41,7 +41,7 @@ public class MatchDataController implements MatchDataService{
 					po.getGuestTeam().getIndividualData().get(0).getPlayerName()+"分数："+
 		po.getGuestTeam().getIndividualData().get(0).getPoints());
 		
-	}
+	}*/
 	
 	@Override
 	public ArrayList<MatchPO> getAllMatch() {
@@ -55,7 +55,7 @@ public class MatchDataController implements MatchDataService{
 		// TODO Auto-generated method stub
 		String file="NBAdata/matches/"+"13-14_"+date+"_"+teams;
 		
-		System.out.println("---------"+file);
+		//System.out.println("---------"+file);
         File f = new File(file);  
         String encoding="UTF-8";
 		

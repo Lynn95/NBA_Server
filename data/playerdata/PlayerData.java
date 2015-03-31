@@ -25,14 +25,14 @@ public class PlayerData implements PlayerDataService {
 		readObject();
 	}
 	
-	public static void main(String args[]) throws NumberFormatException, IOException{
+	/*public static void main(String args[]) throws NumberFormatException, IOException{
 		PlayerData da=new PlayerData();
 		ArrayList<PlayerInfoPO> pl=da.getAllPlayer();
 		System.out.println("进入main函数进行测试："+pl.size());
 		for(int i=0;i<pl.size();i++){
 			//System.out.println("---:"+pl.get(i).getName()+pl.get(i).getName().length()+";-----"+i);
 		}
-	}
+	}*/
 	
 	@Override
 	public ArrayList<PlayerInfoPO> getAllPlayer() {

@@ -110,27 +110,27 @@ public class PlayerController extends UnicastRemoteObject implements PlayerBLSer
 	
 	
 	
-	public static void main(String args[]) throws RemoteException{
+	/*public static void main(String args[]) throws RemoteException{
 		System.out.println("-----:"+"进入main函数进行测验！");
 		 PlayerController c=new PlayerController();
 		 c.writePlayerToDataBase();
 		
 		
-       //    MatchInfo_player mInfo=new MatchController();
+           MatchInfo_player mInfo=new MatchController();
 		
 		
 		
 		
  
 		
-	/*PlayerDataService dataServer=new PlayerData();
+	PlayerDataService dataServer=new PlayerData();
 		ArrayList<PlayerInfoPO> list=dataServer.getAllPlayer();
 		
 		for(int i=0;i<list.size();i++){
 			System.out.println("打印球员信息："+list.get(i).getName()+" ; "+(list.get(i).getSchool())+";"+list.get(i).getHeight()+";"+list.get(i).getWeight());
-			} */
+			} 
 		
-	}
+	}*/
 
 	
 	private void readPlayerFromDBS(String item){

@@ -55,7 +55,7 @@ public class TeamController extends UnicastRemoteObject implements TeamBLService
      }
      
      
-	public static void main(String args[]){
+	/*public static void main(String args[]){
 		
 		
 		double x=8;
@@ -63,7 +63,7 @@ public class TeamController extends UnicastRemoteObject implements TeamBLService
 		
 		System.out.println(x/y);
 		
-        /*DecimalFormat df = new DecimalFormat( "0.0000 ");  
+        DecimalFormat df = new DecimalFormat( "0.0000 ");  
         double d1 = 0.6;  
         double d2 = 4.56789;  
         System.out.println(df.format(d1));   
@@ -71,7 +71,7 @@ public class TeamController extends UnicastRemoteObject implements TeamBLService
 		
 		double x=0.92222222222222222222222222;
 		DecimalFormat  f=new DecimalFormat("#.00");
-		System.out.println(f.format(x));*/
+		System.out.println(f.format(x));
 		try {
 		TeamController t=new TeamController();/*
 		//t.write_TeamSeasondata_To_dataBase();
@@ -84,10 +84,10 @@ public class TeamController extends UnicastRemoteObject implements TeamBLService
 		
 		for(int i=0;i<t.infoList.size();i++){
 			System.out.println("打印球队名："+t.infoList.get(i).getFullName());
-		}*/
+		}
 		
-		/*TeamController t=new TeamController();
-		t.write_teamInfo_to_dataBase();*/
+		TeamController t=new TeamController();
+		t.write_teamInfo_to_dataBase();
 		
 		
 			//t.getAllTeam();
@@ -98,7 +98,7 @@ public class TeamController extends UnicastRemoteObject implements TeamBLService
 			e.printStackTrace();
 		}
 	}
-	
+	*/
 	
 
 	@Override
@@ -158,7 +158,7 @@ public class TeamController extends UnicastRemoteObject implements TeamBLService
 	double stealEfficiency ,double assistEfficiency
 	    	   * */
 	    	TeamSeasonDataVO  vo=new TeamSeasonDataVO(rs.getString("teamName"),rs.getInt("matchNum"),
-	    			  rs.getInt("fieldGoal"),rs.getInt("shootNum"),
+	    			  rs.getInt("winNum"),rs.getInt("fieldGoal"),rs.getInt("shootNum"),
 	    			  rs.getInt("T_fieldGoal"),rs.getInt("T_shootNum"),
 	    			  rs.getInt("freeThrowGoalNum"),rs.getInt("freeThrowNum"),rs.getInt("O_Rebound"),
 	    			  rs.getInt("D_Rebound"),rs.getInt("assistNum"),

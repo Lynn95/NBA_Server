@@ -44,27 +44,24 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 	ArrayList<PlayerWholeSeasonData> list=new ArrayList<>();			//韦祖策添加的
 	
 	public static void main(String args[]) throws RemoteException{
+		
+		System.out.println("   v size!");
 		MatchController c=new MatchController();
-		//MatchDataService mds = new MatchDataController();
-	//	ArrayList<MatchPO> list= mds.getAllMatch();
+		MatchDataService mds = new MatchDataController();
+	ArrayList<MatchPO> list= mds.getAllMatch();
 		 
 		
-		/*System.out.println("打印比赛的信息："+vo.getDate()+";"+vo.getScores()+vo.getMatchScore().toString());
-		System.out.println(vo.getHostTeam().getBlockNum()+";个人得分信息：");
-		for(int k=0;k<vo.getHostTeam().getIndividualData().size();k++){
-			System.out.println(vo.getHostTeam().getIndividualData().get(k).getPlayerName()+" ;"
-		+vo.getHostTeam().getIndividualData().get(k).getPoints());
-		}*/
+	
 		
-	/*	ArrayList<PlayerSeasonDataVO> p= c.getAllPlayerSeasonMatchData();
+	ArrayList<PlayerSeasonDataVO> p= c.getAllPlayerSeasonMatchData();
 		ArrayList<TeamSeasonDataVO> v=c.getTeamSeasonData();
 		
 		
 		
 		for(int k=0;k<v.size();k++){
 			p.get(k).getAssistEfficiency();
-			System.out.println(v.get(k).getTeamName()+";"+v.get(k).getOffenseEfficiency()+"--------"+k);
-		}*/
+			System.out.println(v.get(k).getTeamName()+";  "+v.get(k).getWinNum());
+		}
 		
 		 
 	}
@@ -423,7 +420,7 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 		String[][] matchCompare = new String[allMatchInfo.size()][2];
 		for (int k = 0; k < allMatchInfo.size(); k++) {
 			matchCompare[k] = allMatchInfo.get(k).getMatchScore().split("-|-");
-			if (matchCompare[k][0].compareTo(matchCompare[k][1]) == 1) {
+			if (Integer.parseInt(matchCompare[k][0])>Integer.parseInt(matchCompare[k][1])) {
 				for (int m = 0; m < teamSeasonInfo.size(); m++) {
 					if (teamSeasonInfo
 							.get(m)
@@ -435,7 +432,7 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 					}
 				}
 
-			} else if (matchCompare[k][0].compareTo(matchCompare[k][1]) == -1) {
+			} else if (Integer.parseInt(matchCompare[k][0])<Integer.parseInt(matchCompare[k][1])) {
 				for (int m = 0; m < teamSeasonInfo.size(); m++) {
 					if (teamSeasonInfo
 							.get(m)
@@ -498,6 +495,7 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 					assistRate);
 			
 			seasonDataList.add(singleSeasonData);
+			System.out.println(winNum +"   "+ singleSeasonData.getTeamName());
 		}
 
 		return seasonDataList;
