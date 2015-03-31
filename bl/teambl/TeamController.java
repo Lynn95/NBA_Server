@@ -369,7 +369,7 @@ public class TeamController extends UnicastRemoteObject implements TeamBLService
 		// TODO Auto-generated method stub	
 		for(int i=0;i<dataList.size();i++){			
 			if(dataList.get(i).getTeamName().equals(teamAbb)){
-				return dataList.get(i).getWinRate();
+				return dataList.get(i).getWinNum();
 			}
 		}
 		return 0;

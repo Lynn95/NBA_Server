@@ -478,7 +478,7 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 
 			TeamSeasonDataVO singleSeasonData = new TeamSeasonDataVO(
 					teamSeasonInfo.get(i).getTeamName(), matchTimes,
-					teamSeasonInfo.get(i).getFieldGoal(), teamSeasonInfo.get(i)
+					winNum.get(i),teamSeasonInfo.get(i).getFieldGoal(), teamSeasonInfo.get(i)
 							.getShootNum(), teamSeasonInfo.get(i)
 							.getT_fieldGoal(), teamSeasonInfo.get(i)
 							.getT_shootNum(), teamSeasonInfo.get(i)
