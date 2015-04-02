@@ -9,6 +9,6 @@
 	<classpathentry kind="src" path="PO"/>
 	<classpathentry kind="src" path="shareclass"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="C:/Users/ASUS/Desktop/mysql-connector-java-5.0.8.jar"/>
+	<classpathentry kind="lib" path="E:/jar/mysql-connector-java-5.0.8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

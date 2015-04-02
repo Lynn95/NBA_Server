@@ -54,9 +54,9 @@ public class TeamMatchVO implements Serializable{
 			double offenseRound, double defenseRound,
 			double freeThrowPercentage, double threePointPercentage,
 			double shootPercentage, double assistEfficiency,
-			double reboundEfficiency, double stealEfficiency,
-			double defenseEfficiency, double O_ReboundEfficiency,
-			double D_ReboundEfficiency,
+			double O_ReboundEfficiency,double D_ReboundEfficiency,
+			double stealEfficiency,double defenseEfficiency,
+			double offenseEfficiency,
 			ArrayList<SingleMatchPersonalDataVO> individualData) {
 		this.teamName = teamName;
 		this.points = pointNum;

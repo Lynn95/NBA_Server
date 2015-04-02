@@ -43,29 +43,28 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 	
 	ArrayList<PlayerWholeSeasonData> list=new ArrayList<>();			//韦祖策添加的
 	
-	public static void main(String args[]) throws RemoteException{
-		
-		System.out.println("   v size!");
-		MatchController c=new MatchController();
-		MatchDataService mds = new MatchDataController();
-	ArrayList<MatchPO> list= mds.getAllMatch();
-		 
-		
 	
-		
-	ArrayList<PlayerSeasonDataVO> p= c.getAllPlayerSeasonMatchData();
-		ArrayList<TeamSeasonDataVO> v=c.getTeamSeasonData();
-		
-		
-		
-		for(int k=0;k<v.size();k++){
-			p.get(k).getAssistEfficiency();
-			System.out.println(v.get(k).getTeamName()+";  "+v.get(k).getWinNum());
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("starts here!");
+		MatchController c;
+		try {
+			c = new MatchController();
+			ArrayList<PlayerSeasonDataVO> p= c.getAllPlayerSeasonMatchData();
+			ArrayList<TeamSeasonDataVO> v=c.getTeamSeasonData();
+			
+			for(int i=0;i<v.size();i++){
+				System.out.println(v.get(i).getOffenseEfficiency()+"   offenseEfficiency!~~~");
+			}
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
-		 
+
 	}
-	
+
+
 	private ArrayList<MatchVO> getAllMatchVO() throws RemoteException{
 		ArrayList<MatchVO> result=new ArrayList<MatchVO>();
 		MatchController c=new MatchController();
@@ -146,6 +145,9 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 		assistEfficiency = (double)vo.getAssistNum() / vo.getOffenseRound() * 100; // ����
 
 		offenseEfficiency = (double)vo.getPointNum() / vo.getOffenseRound() * 100; // ��Ч��
+		System.out.println(offenseEfficiency+"   cal offenseRate");
+		System.out.println(vo.getPointNum()+"   pointNum");
+		System.out.println(vo.getOffenseRound()+"  offenseRound");
 		stealEfficiency = (double)vo.getStealNum() / vo.getDefenseRound() * 100; // ������
 		defenseEfficiency = (double)vo.getPointNum() / vo.getDefenseRound() * 100; // ����Ч��
 
@@ -428,7 +430,7 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 							.equals(allMatchInfo.get(k).getHostTeam()
 									.getTeamName())) {
 						winNum.set(m, winNum.get(m) + 1);
-						//System.out.println("@@@@!!");
+						
 					}
 				}
 
@@ -440,7 +442,7 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 							.equals(allMatchInfo.get(k).getGuestTeam()
 									.getTeamName())) {
 						winNum.set(m, winNum.get(m) + 1);
-						//System.out.println(winNum.get(m)+"@@@@");
+					
 					}
 				}
 			}
@@ -464,8 +466,7 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 					/ matchTimes;
 			double assistRate = (double)teamSeasonInfo.get(i).getAssistEfficiency()
 					/ matchTimes;
-			
-			//System.out.println(teamSeasonInfo.get(i).getAssistEfficiency()+"  assistEfficiency");
+	
 
 			double winRate = (double)winNum.get(i) / matchTimes; // ʤ��
 			double reboundRate = 0; // ������
@@ -495,7 +496,7 @@ public class MatchController extends UnicastRemoteObject implements MatchInfo_te
 					assistRate);
 			
 			seasonDataList.add(singleSeasonData);
-			System.out.println(winNum +"   "+ singleSeasonData.getTeamName());
+		
 		}
 
 		return seasonDataList;
