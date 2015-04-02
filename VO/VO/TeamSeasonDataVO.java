@@ -9,7 +9,7 @@ public class TeamSeasonDataVO implements Serializable{
 	/*
 	 * 一支球队的
 	 */
-
+    String season;            //赛季
 	String teamName; 				// 队名
 	int matchNum; 					// 比赛场数
 	int winNum;           // numbers of matches that a team wins
